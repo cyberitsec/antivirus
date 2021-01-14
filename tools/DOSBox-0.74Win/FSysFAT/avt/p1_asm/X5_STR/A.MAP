@@ -1,0 +1,11 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00000H 00000H A_TEXT             CODE
+ 00000H 00000H 00000H _DATA              DATA
+ 00000H 00023H 00024H DATEPROG           
+ 00030H 00048H 00019H SEGPROG            
+
+Program entry point at 0003:0000
+Warning: No stack
+

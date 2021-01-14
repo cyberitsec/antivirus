@@ -1,0 +1,13 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00000H 00000H P1_TEXT            CODE
+ 00000H 00000H 00000H _DATA              DATA
+ 00000H 0000BH 0000CH MYDATA             
+ 00010H 0002FH 00020H MYSTACK            
+ 00030H 0005AH 0002BH MAINPROG           
+ 00060H 0008DH 0002EH MYPROC             
+
+Program entry point at 0003:0000
+Warning: No stack
+

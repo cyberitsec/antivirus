@@ -1,0 +1,13 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00000H 00000H SEM6_01B_TEXT      CODE
+ 00000H 00000H 00000H _DATA              DATA
+ 00000H 00025H 00026H DATEPROG           
+ 00030H 00043H 00014H STIVA              
+ 00050H 00076H 00027H SEGPROG            
+ 00080H 0009DH 0001EH PROCEDURI          
+
+Program entry point at 0005:0000
+Warning: No stack
+

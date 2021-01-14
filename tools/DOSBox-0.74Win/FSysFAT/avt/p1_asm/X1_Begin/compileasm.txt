@@ -1,0 +1,20 @@
+D:\TEMP\CURSV>c:\Software\BORLANDC\bin\bcc.exe -ml -IC:\Software\BORLANDC\INCLUDE -LC:\Software\BORLANDC\LIB aaa3.c
+
+c:\Software\BORLANDC\bin\tlink aaa3.obj
+
+1.
+
+C:\Software\ASM\TASM\tasm.exe P1.asm
+
+C:\Software\ASM\TASM\tlink.exe P1.OBJ
+
+C:\Software\ASM\TASM\td.exe P1.EXE
+
+2.
+c:\Software\BORLANDC\bin\bcc.exe -ml -c p001.c
+
+C:\Software\ASM\TASM\tlink.exe P001.OBJ
+
+C:\Software\ASM\TASM\td.exe P001.EXE
+
+2.

@@ -1,0 +1,3 @@
+D:\TEMP\CURSV>c:\Software\BORLANDC\bin\bcc.exe -ml -IC:\Software\BORLANDC\INCLUDE -LC:\Software\BORLANDC\LIB aaa3.c
+
+c:\Software\BORLANDC\bin\tlink aaa3.obj

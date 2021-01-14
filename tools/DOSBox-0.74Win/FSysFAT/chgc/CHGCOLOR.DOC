@@ -1,0 +1,72 @@
+
+
+
+                                ChgColor
+                                --------
+
+        ChgColor is, what I think, is a useful utility for changing colors
+    on a PC with an EGA board.  I am placing it in the public domain.  I
+    am not asking for any donations or contributions.  I would like,
+    however, to hear any comments anyone might have about it.  I would
+    also like to hear about any enhancements or changes made to ChgColor.
+    I am registers at the following two BBSs:
+
+            The Software Society (201) 729-7410
+            The Pegasus Project  (201) 797-8957
+
+
+        ChgColor allows you to change the EGA's color palette registers.
+    Although the EGA has 256 colors available you may only use 16 of them
+    at any one time.  ChgColor allows you to change the default colors for
+    for each of the 16 registers.  You could change what is normally
+    displayed as WHITE to any other color you wish.  These color will stay
+    in effect in any of the programs you run including DOS.
+
+        ChgColor leaves a part of itself resident.  This had to be done
+    because some programs and BIOS calls change the palette registers back
+    to the factory default.  ChgColor intercepts the INT 10h (BIOS video)
+    interrupt and checks to see if a palette change or a video reset was
+    requested.  If it was, the registers are then reset to the user
+    selected colors.
+
+        The usage of ChgColor is as follows:
+
+            chgcolor reg:color reg:color reg:color ...
+
+                where reg is a valid register number from 0 to 15
+
+                            0                    Black
+                            1                    Blue
+                            2                    Green
+                            3                    Cyan
+                            4                    Red
+                            5                    Magenta
+                            6                    Brown
+                            7                    Light Gray
+                            8                    Dark  Gray
+                            9                    Light Blue
+                            10                   Light Green
+                            11                   Light Cyan
+                            12                   Light Red
+                            13                   Light Magenta
+                            14                   Yellow
+                            15                   White
+
+                where color is a valid EGA color from 0 to 255.
+
+            chgcolor with no parameters will reset the palette registers
+       to their factory defaults.
+
+
+            The semi-colon between reg and color is used for clarity, a
+       space will work just as well.
+
+            The assembler source code has been included for anyone who
+       happens to be interested. Enjoy.
+
+
+
+            John Toledo
+            312 E26th St.
+            Paterson, NJ 07514
+            (201) 523-6048

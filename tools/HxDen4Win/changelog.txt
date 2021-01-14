@@ -1,0 +1,264 @@
+Version history of HxD
+======================
+
+Below you find a list with the added features, changes and fixes for 
+each version.
+
+
+Version 1.5.2.0
+---------------
+
+- HxD now supports Unicode file names under Windows NT+
+- Internal optimizations to keep the exe size down (which was increased by the
+  Unicode support)
+- Update-search shows changes in the language of the running HxD version
+
+
+Version 1.5.1.0 beta
+--------------------
+
+- Added Internet update checker
+- Minor caret movement improvement
+- Fix: Wrong caret position after deleting last byte of a row
+- Fix: Formatting for modified data isn't loaded/saved correctly
+- Fix: Exporting to Pascal, C, Java always uses empty file name
+- Fix: Management error of the internal formats list which resulted in some 
+  painting bugs
+- Fix: Display problems under Asian systems
+- Fix: When typing hex digits at the end of a row, caret doesn't move into 
+  next row
+- Fix: Caret position not always correct after undo
+- View options can be set globally in the options dialog (vs. locally in the
+  toolbar) 
+
+
+Version 1.5.0.0 beta
+--------------------
+
+- Modified data highlighted red and bold (configurable)
+- Major internal optimizations regarding foldable section. This is especially 
+  visible when opening large programs with the RAM-Editor and doing mouse 
+  selections
+- Optimized undo, which uses now far less memory by not saving original data
+- New function "Open Disk-Image" (you can specify the sector-size)
+- Reworked options dialog
+- Optional creation of backup-files
+- Offsets can now be displayed additionally as decimal or octal numbers
+- More precise detection when progress dialog should show
+- Selection-scrolling is more intuitive (also fixed a related bug)
+- Mouse selection is smoother and more precise; a selection can begin inside a 
+  hex pair
+- Tooltip window beside the scrollbar showing the top sector when editing disks
+  or disk images
+- Page up and page down preserver the caret position
+- Navigating to nibbles when clicking inside hex pairs
+- Order of tabs can be changed through drag&drop
+- Reworked scrollbar: hides when not needed, correctly handles resizing of 
+  window
+- Tab control draws its background according to the selected theme
+- Tab and hex editor controls are visually united
+- Minor visual adaptations
+- Fix: After a "replace all"-operation the progress dialog sometimes keeps open
+- Fix: Change order of Ctrl+Tab corresponds to the MDI order, not the order as
+  seen in the tab control
+- Fix: During a replace-operation the "resized file"-notification pops up 
+  several times
+
+
+Version 1.4.2.0
+---------------
+
+- New menu command "Refresh": updates the view and the caches
+- Navigating to Nibbles (= half bytes) can now be done with CTRL+Left 
+  respectively CTRL+Right
+- Reactivating of HxD after drag&droping a file onto the program
+- FIX: Error when reading diskettes under Win9X (error did not appear with all 
+       BIOSes)
+- FIX: The remaining duration in the progress window is displayed as time (pm/am) 
+- FIX: Focus-problems of the progress window
+- FIX: Rotated caption of the checksum-panel is under Win9x very small
+- FIX: Flickering border when changing the window size and Windows-themes are 
+       active. I fixed the corresponding bug in the VCL.
+- FIX: If hex-editor window is very small an access violation appears
+- FIX: Replace-dialog kann be shown, even when in readonly-mode, whichs stops 
+       replace-operations anyway 
+- FIX: Replacing with nothing raises an access violation
+- FIX: RAM-Editor tries to show guarded pages
+- FIX: Replace all: the progress window disappears often to reappear shortly 
+       after again
+- FIX: Confirmation dialog sometimes outside the screen
+- FIX: New instance does not take over the multiinstance-settings
+- many other corrections
+
+
+Version 1.4.1.0 beta
+--------------------
+
+- FIX: Write error when inserting (due to overwriting of memory) 
+- FIX: Ctrl+Shift+End raises an access violation 
+- FIX: Wrong position of caret after insertion 
+- FIX: A special order of insertion and deletion raises access violations 
+- FIX: Starting HxD multiple times under Win9x raises an OS-exception 
+       (managment error with DiskIO.dll) 
+- smaller optimizations 
+- correction of caret-movement in corner cases
+
+
+Version 1.4.0.0 beta
+--------------------
+
+- HxD now support reading/writing onto logical or physical drives also under 
+  Windows9x. All kinds and all sizes are supported (FAT12, FAT16, FAT32, 
+  disk with int13 extensions and without). CDROM support will follow. 
+- Notifications/Warnings can be deactivated (directly in the message window or 
+  in the options) 
+- Ask for user confirmation when deleting or inserting bytes 
+- VB-Exporter removed: There is no reasonable way to define big arrays 
+- Clearly less drive noise and no error message (happened on some NT 4.0 
+  systems) when checking for a inserted disk 
+- Modal dialog boxes flash when clicking outside the dialog box (as usual under
+  Win98/Win2000+) 
+- FIX: After "Saving as..." the whole filename is showed in the caption, but it
+       should be without path 
+- FIX: Deleting a selection with DEL does not update the statusbar 
+- FIX: Deleting-function generates new foldable sections, but it should resize 
+       the existing ones
+- FIX: Delete with backspace was buggy 
+- FIX: If caret is in a folded line, it doesn't move when scrolling horizontally 
+- FIX: Changing between hex- and text-sections with TAB does not correctly 
+       redraw the selection 
+- other little things
+
+
+Version 1.3.0.0 beta
+--------------------
+
+- New feature: Data-Folding  
+- resizing of bookmark-symbol if text smaller than 16x16, else centering 
+- FIX: Searching of integer numbers in big endian format was incorrect 
+- FIX: Resizing of the window causes sometimes wrong caret repositioning 
+- FIX: Although multiple instances are allowed, the first instance is always 
+       activated 
+- FIX: "Save as" and "Export" aborts without showing the save-dialog, when 
+       default filename contains illegal characters 
+- FIX: With some special fonts: After a restart of HxD another font is displayed
+       than was selected the last time  
+- FIX: Writing into readonly/unassigned memory regions causes drawing errors 
+       (however data is left intact). 
+
+
+Version 1.2.2.0
+---------------
+
+- Fix a minor caching issue
+
+
+Version 1.2.1.0
+---------------
+
+- HxD is activated when a new instance starts and single instance option enabled
+- Information displayed in the StatusBar is updated when MDIChild changes
+- FIX: Trying to open a non-existant file using the commandline creates several
+    access violations and error messages
+- FIX: Displaying statistics of logical drives craches the program
+   (caused by buggy caching-system)
+- FIX: Progress-window sometimes creates floating point division by zero
+- FIX: Opening pure Audio CD as logical drive generates access violations
+- FIX: In a corner case caret position is not set correctly after undo
+- FIX: Detection if a floppy disk is inserted is not always correct and causes
+    the DriveOpen dialog to display wrong information
+    (necessary checks make again empty floppy drives emit more noise)
+    
+
+Version 1.2.0.0
+---------------
+
+- Buffered reading making navigation more pleasant
+- Sector separators and buttons as well as keyboard shortcuts added for 
+  drive navigation
+- On WinXP+ the whole drive is viewable/editable even if the driver reports 
+  faked information
+- Filename, StartOffset, EndOffset, Length and Date information was added to 
+  source code exporters
+- Minimzed floppy disk drive noise when checking if a floppy is inserted  
+- New function: Select block (From-to-selection)
+- Drawing of the offset col and row is synchronous with the drawing of the data
+  section, even if source is slow (e.g. floppy disk)
+- reduced PageControl flicker
+- reduced flicker when maximizing windows
+- Windows are opened maximized by default
+- Single instance option
+- Drives are opened write protected by default
+- Pasting was extended to work with non-resizeable streams, such as drives:
+  If there is enough place data overwrites old data instead of beeing inserted
+- Theme can be changed in options (default or Tristan 2)
+- Checksums/Digests can be copied to clipboard using the contextmenu or keyboard
+  shortcuts    
+- FIX: Entering a character in overwrite mode deleted the selection and then
+  overwrote the following character, instead of just replacing the character
+  at the caret
+- FIX: Big streams (e.g. drives) didn't correctly work with scrollbars  
+- more corrections
+
+
+Version 1.1.0.0
+---------------
+
+- Searching supports new data types:
+   - Integer numbers
+   - Floating point numbers
+- Exporting supports new formats:
+   Motorola S19 Records, Motorola S28 Records, Motorola S37 Records,
+   16 Bit Intel Hex, 20 Bit Intel Hex, 32 Bit Intel Hex
+- reduction of EXE-file size of 376 KB through optimized source-code
+  (not EXE-compression), to make it fit on a 1.4 MB diskette
+  (for exmaple when you need HxD for recovery work)
+- FIX: Searching hex-values did not always return the correct result
+- FIX: When Horizontal scrollbar jumped back, window content was not updated
+- other minor tweaking
+
+
+Version 1.0.0.0 beta
+--------------------
+
+- Diskeditor for viewing/editing Harddisks, Floppys, USB-Drives, ... (NT-only)
+- RAM-Viewer is now a RAM-Editor
+- exporting of data to source code (Pascal, C, Java, Visual Basic)
+  or as formatted output (plain text, HTML, Richtext, TeX)
+- calculating checksums and digests:
+    Checksum-8, Checksum-16, Checksum-24, Checksum-32, CRC-16, CRC-16 CCITT,
+    CRC-32, Custom CRC, SHA-1, SHA-256, SHA-384, SHA-512, MD-2, MD-4, MD5
+- new layout of search-dialog
+- improved searching: added 'backward' and 'all' search directions
+- added replace function and matching dialog
+- new offset header
+- horizontal scrolling
+- added ghost caret: a dotted box that surrounds the character/hex value 
+  corresponding to the character/hex value under the active caret
+- removed flicker when activating other MDI childs
+- basic printing
+- better error handling
+- improved the matrix-like animation in the info-dialog (open menu "?" and click
+  on "Info")
+- options are saved to registry
+- fixed undo: when deleting a selection undo was a two-step process
+- fixed various painting issues
+- fixed slow loading/closing of many files
+- fixed wrong icons in tabs
+- many small fixes
+- English version available
+
+
+Version 0.8.5.0 alpha
+---------------------
+
+- written from scratch, for outermost flexibility and speed
+- handling of unlimited file size
+- searching
+- RAM-Viewer
+- unlimited undo
+- statistics
+- MDI interface with tabs
+- bookmarks
+- first official version of HxD
+- only available in German
